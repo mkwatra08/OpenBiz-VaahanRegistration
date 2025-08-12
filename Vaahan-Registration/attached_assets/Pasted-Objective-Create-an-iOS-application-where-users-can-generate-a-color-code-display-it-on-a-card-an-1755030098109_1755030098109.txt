@@ -1,0 +1,43 @@
+Objective: Create an iOS application where users can generate a color code, display it on a
+card, and store it locally when offline. When the internet is available, sync the selected color with
+Firebase.
+Features and Requirements
+1. Color Code generation Screen
+Allow users to generate a random hex code and then display the corresponding color in
+the card, users can generate multiple hex codes and all the cards should be displayed
+on the screen.
+2. Local Data Storage (Offline Handling)
+Store the selected color codes along with the timestamp locally when offline for
+simplicity.
+● Persistent Color: Ensure the all selected color is displayed after the app is closed and
+reopened.
+3. Firebase Sync (Online Handling)
+● Firestore or Firebase Realtime Database: Sync all the selected colors codes to
+Firebase when the app is online.
+4. Connectivity Awareness
+● Network Status: Detect whether the app is online or offline and display a simple
+indicator.
+5. Error Handling
+● Basic Error Handling: If syncing with Firebase fails due to network issues, retry syncing
+once internet is restored.
+Additional Instructions
+1. Complete the Assignment within 24 Hours:
+○ Ensure the entire project is developed and functional within the 24-hour window.
+2. Follow Proper Design Guidelines:
+○ Follow iOS Human Interface Guidelines for UI components.
+○ Ensure the app is responsive, with a clean and intuitive design.
+3. Record the Screen:
+4. ○ Record the entire walkthrough of key features and functionality. The video should
+demonstrate the app’s color selection, offline storage, and Firebase sync in
+action.
+Push Code to GitHub Repository:
+○ Push the entire project code to a GitHub repository and share the repo.
+Deliverables
+1. GitHub Repository:
+○ Include all code and resources, with clear documentation in the README.md file
+on how to run the project.
+○ Use proper commit messages and maintain code quality throughout.
+2. Screen Recording:
+○ Record and share a video demonstrating the app in action, covering color
+selection, offline mode, and syncing with Firebase.
+○ The video should also highlight any key design decisions and app functionality.
