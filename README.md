@@ -41,7 +41,6 @@ vehicle-registration-dashboard/
 │   └── config.toml        # Streamlit configuration
 ├── README.md              # Project documentation
 ├── ASSIGNMENT_COVERAGE.md # Assignment requirements analysis
-├── replit.md              # Project architecture and preferences
 └── pyproject.toml         # Python dependencies
 ```
 
