@@ -187,8 +187,12 @@ class DataProcessor:
         
         # Top performing segments
         avg_growth_by_category = data.groupby('category')['yoy_growth'].mean().fillna(0)
-        metrics['top_growing_category'] = avg_growth_by_category.idxmax() if not avg_growth_by_category.empty else "N/A"
-        metrics['top_growth_rate'] = avg_growth_by_category.max() if not avg_growth_by_category.empty else 0
+        if len(avg_growth_by_category) > 0:
+            metrics['top_growing_category'] = avg_growth_by_category.idxmax()
+            metrics['top_growth_rate'] = avg_growth_by_category.max()
+        else:
+            metrics['top_growing_category'] = "N/A"
+            metrics['top_growth_rate'] = 0
         
         # Volatility metrics
         avg_volatility = data['volatility_30d'].mean()

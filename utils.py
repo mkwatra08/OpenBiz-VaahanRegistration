@@ -268,21 +268,24 @@ def get_investment_insights(data: pd.DataFrame) -> dict:
     insights = {}
     
     # Growth momentum analysis
-    recent_growth = data.groupby('category')['yoy_growth'].tail(30).mean()
+    recent_growth = data.groupby('category')['yoy_growth'].apply(lambda x: x.tail(30).mean())
     insights['growth_momentum'] = recent_growth.to_dict()
     
     # Market leader identification
-    market_leaders = data.groupby('category')['registrations'].sum().sort_values(ascending=False)
+    market_leaders = data.groupby('category')['registrations'].sum()
+    market_leaders = market_leaders.sort_values(ascending=False)
     insights['market_leaders'] = market_leaders.head(3).to_dict()
     
     # Volatility assessment
-    volatility = data.groupby('category')['registrations'].std() / data.groupby('category')['registrations'].mean()
+    volatility_by_cat = data.groupby('category')['registrations'].agg(['std', 'mean'])
+    volatility = volatility_by_cat['std'] / volatility_by_cat['mean']
     insights['volatility_scores'] = volatility.to_dict()
     
     # Trend classification
     trend_analysis = {}
     for category in data['category'].unique():
-        cat_data = data[data['category'] == category]['yoy_growth'].dropna()
+        cat_data = data[data['category'] == category]['yoy_growth']
+        cat_data = cat_data.dropna()
         if len(cat_data) > 0:
             recent_trend = cat_data.tail(10).mean()
             if recent_trend > 15:
