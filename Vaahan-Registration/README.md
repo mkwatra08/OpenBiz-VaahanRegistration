@@ -190,7 +190,7 @@ vehicle-registration-dashboard/
 - **Caching**: Streamlit built-in caching for performance
 
 ### Deployment
-- **Platform**: Replit (development), ready for cloud deployment
+- **Platform**:ready for cloud deployment
 - **Port**: 5000 (configurable)
 - **Configuration**: `.streamlit/config.toml`
 
