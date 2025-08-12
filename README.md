@@ -198,3 +198,7 @@ vehicle-registration-dashboard/
 - **Memory Management**: Efficient DataFrame operations
 - **Load Time**: < 3 seconds for data processing
 - **Responsiveness**: Interactive charts with sub-second updates
+
+### Demonstration
+
+https://youtu.be/IFrbV7YUu_0
